@@ -16,15 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/public/assets/images/favicon.png') }}">
-
-
-    <link href="{{ asset('assets/public/assets/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet" type="text/css" />
-
-    <link href="{{ asset('assets/public/assets/vendor/nouislider/nouislider.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <link href="{{ asset('assets/public/assets/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet" type="text/css" />
-
+    <link href="{{ asset('assets/public/assets/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('assets/public/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+    {{-- Datatabel --}}
+    <link href="{{ asset('assets/public/assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet"
+        type="text/css" />
+
 
 </head>
 
@@ -53,21 +52,29 @@
 ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
-                <svg class="logo-abbr" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-abbr" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <rect class="react-logo" width="60" height="60" rx="30" fill="#00A15D" />
-                    <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
+                    <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60"
+                        height="60">
                         <rect class="react-logo" width="60" height="60" rx="30" fill="#00A15D" />
                     </mask>
                     <g mask="url(#mask0)">
-                        <path d="M130 51.3929L126.5 45.2109C123 38.9626 116 26.6981 109 23.1017C102 19.5715 95 24.875 88 29.3002C81 33.6591 74 37.3053 67 39.0124C60 40.7857 53 40.7857 46 36.3606C39 32.0017 32 23.0519 25 17.7981C18 12.4448 11 10.7874 4 16.9197C-3 23.0519 -10 37.3053 -17 40.7857C-24 44.2662 -31 37.3053 -34.5 33.7088L-38 30.1786V62H-34.5C-31 62 -24 62 -17 62C-10 62 -3 62 4 62C11 62 18 62 25 62C32 62 39 62 46 62C53 62 60 62 67 62C74 62 81 62 88 62C95 62 102 62 109 62C116 62 123 62 126.5 62H130V51.3929Z" fill="url(#paint0_linear)" />
-                        <path d="M-54 55.7741L-50.5 50.9799C-47 46.1343 -40 36.623 -33 33.8339C-26 31.0962 -19 35.2092 -12 38.641C-5 42.0213 2 44.849 9 46.1728C16 47.5481 23 47.5481 30 44.1164C37 40.736 44 33.7954 51 29.721C58 25.5694 65 24.2841 72 29.0398C79 33.7954 86 44.849 93 47.5481C100 50.2473 107 44.849 110.5 42.0599L114 39.3222V64H110.5C107 64 100 64 93 64C86 64 79 64 72 64C65 64 58 64 51 64C44 64 37 64 30 64C23 64 16 64 9 64C2 64 -5 64 -12 64C-19 64 -26 64 -33 64C-40 64 -47 64 -50.5 64H-54V55.7741Z" fill="url(#paint1_linear)" />
+                        <path
+                            d="M130 51.3929L126.5 45.2109C123 38.9626 116 26.6981 109 23.1017C102 19.5715 95 24.875 88 29.3002C81 33.6591 74 37.3053 67 39.0124C60 40.7857 53 40.7857 46 36.3606C39 32.0017 32 23.0519 25 17.7981C18 12.4448 11 10.7874 4 16.9197C-3 23.0519 -10 37.3053 -17 40.7857C-24 44.2662 -31 37.3053 -34.5 33.7088L-38 30.1786V62H-34.5C-31 62 -24 62 -17 62C-10 62 -3 62 4 62C11 62 18 62 25 62C32 62 39 62 46 62C53 62 60 62 67 62C74 62 81 62 88 62C95 62 102 62 109 62C116 62 123 62 126.5 62H130V51.3929Z"
+                            fill="url(#paint0_linear)" />
+                        <path
+                            d="M-54 55.7741L-50.5 50.9799C-47 46.1343 -40 36.623 -33 33.8339C-26 31.0962 -19 35.2092 -12 38.641C-5 42.0213 2 44.849 9 46.1728C16 47.5481 23 47.5481 30 44.1164C37 40.736 44 33.7954 51 29.721C58 25.5694 65 24.2841 72 29.0398C79 33.7954 86 44.849 93 47.5481C100 50.2473 107 44.849 110.5 42.0599L114 39.3222V64H110.5C107 64 100 64 93 64C86 64 79 64 72 64C65 64 58 64 51 64C44 64 37 64 30 64C23 64 16 64 9 64C2 64 -5 64 -12 64C-19 64 -26 64 -33 64C-40 64 -47 64 -50.5 64H-54V55.7741Z"
+                            fill="url(#paint1_linear)" />
                     </g>
                     <defs>
-                        <linearGradient id="paint0_linear" x1="46" y1="13" x2="46" y2="62" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint0_linear" x1="46" y1="13" x2="46" y2="62"
+                            gradientUnits="userSpaceOnUse">
                             <stop offset="0" stop-color="#23D58A" />
                             <stop offset="1" stop-color="#00A15D" />
                         </linearGradient>
-                        <linearGradient id="paint1_linear" x1="30" y1="26" x2="30" y2="64" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint1_linear" x1="30" y1="26" x2="30" y2="64"
+                            gradientUnits="userSpaceOnUse">
                             <stop offset="0" stop-color="#FFED4B" />
                             <stop offset="1" stop-color="#FF8C4B" />
                         </linearGradient>
@@ -108,17 +115,24 @@
                     <div class="tab-pane fade active show" id="chat" role="tabpanel">
                         <div class="card mb-sm-3 mb-md-0 contacts_card dlab-chat-user-box">
                             <div class="card-header chat-list-header text-center">
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
-                                            <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2"
+                                                rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
                                         </g>
                                     </svg></a>
                                 <div>
                                     <h6 class="mb-1">Chat List</h6>
                                     <p class="mb-0">Show All</p>
                                 </div>
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
                                             <circle fill="#000000" cx="5" cy="12" r="2" />
@@ -133,7 +147,8 @@
                                     <li class="active dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -145,7 +160,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -157,7 +173,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -169,7 +186,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -182,7 +200,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -194,7 +213,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -206,7 +226,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -219,7 +240,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -231,7 +253,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -244,7 +267,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -256,7 +280,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -268,7 +293,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -280,7 +306,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/3.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
@@ -293,7 +320,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/4.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -305,7 +333,8 @@
                                     <li class="dlab-chat-user">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="" />
+                                                <img src="{{ asset('assets/public/assets/images/avatar/5.jpg') }}"
+                                                    class="rounded-circle user_img" alt="" />
                                                 <span class="online_icon offline"></span>
                                             </div>
                                             <div class="user_info">
@@ -320,11 +349,17 @@
                         <div class="card chat dlab-chat-history-box d-none">
                             <div class="card-header chat-list-header text-center">
                                 <a href="javascript:void(0);" class="dlab-chat-history-back">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <polygon points="0 0 24 0 24 24 0 24" />
-                                            <rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1" />
-                                            <path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) "
+                                                x="14" y="7" width="2" height="10" rx="1" />
+                                            <path
+                                                d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                fill="#000000" fill-rule="nonzero"
+                                                transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
                                         </g>
                                     </svg>
                                 </a>
@@ -333,7 +368,10 @@
                                     <p class="mb-0 text-success">Online</p>
                                 </div>
                                 <div class="dropdown">
-                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                    <a href="javascript:void(0);" data-bs-toggle="dropdown"
+                                        aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                            viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                 <rect x="0" y="0" width="24" height="24" />
                                                 <circle fill="#000000" cx="5" cy="12" r="2" />
@@ -356,7 +394,8 @@
                             <div class="card-body msg_card_body dlab-scroll" id="DLAB_W_Contacts_Body3">
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         Hi, how are you samim?
@@ -369,12 +408,14 @@
                                         <span class="msg_time_send">8:55 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         I am good too, thank you for your chat template
@@ -387,12 +428,14 @@
                                         <span class="msg_time_send">9:05 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         I am looking for your next templates
@@ -405,12 +448,14 @@
                                         <span class="msg_time_send">9:10 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         Bye, see you
@@ -419,7 +464,8 @@
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         Hi, how are you samim?
@@ -432,12 +478,14 @@
                                         <span class="msg_time_send">8:55 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         I am good too, thank you for your chat template
@@ -450,12 +498,14 @@
                                         <span class="msg_time_send">9:05 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         I am looking for your next templates
@@ -468,12 +518,14 @@
                                         <span class="msg_time_send">9:10 AM, Today</span>
                                     </div>
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/2.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-start mb-4">
                                     <div class="img_cont_msg">
-                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="" />
+                                        <img src="{{ asset('assets/public/assets/images/avatar/1.jpg') }}"
+                                            class="rounded-circle user_img_msg" alt="" />
                                     </div>
                                     <div class="msg_cotainer">
                                         Bye, see you
@@ -485,7 +537,8 @@
                                 <div class="input-group">
                                     <textarea class="form-control" placeholder="Type your message..."></textarea>
                                     <div class="input-group-append">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-location-arrow"></i></button>
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fa fa-location-arrow"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -494,7 +547,9 @@
                     <div class="tab-pane fade" id="alerts" role="tabpanel">
                         <div class="card mb-sm-3 mb-md-0 contacts_card">
                             <div class="card-header chat-list-header text-center">
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
                                             <circle fill="#000000" cx="5" cy="12" r="2" />
@@ -506,11 +561,17 @@
                                     <h6 class="mb-1">Notications</h6>
                                     <p class="mb-0">Show All</p>
                                 </div>
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
-                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
                                         </g>
                                     </svg></a>
                             </div>
@@ -563,21 +624,32 @@
                     <div class="tab-pane fade" id="notes">
                         <div class="card mb-sm-3 mb-md-0 note_card">
                             <div class="card-header chat-list-header text-center">
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
-                                            <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2"
+                                                rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
                                         </g>
                                     </svg></a>
                                 <div>
                                     <h6 class="mb-1">Notes</h6>
                                     <p class="mb-0">Add New Nots</p>
                                 </div>
-                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
-                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
                                         </g>
                                     </svg></a>
                             </div>
@@ -590,8 +662,11 @@
                                                 <p>10 Aug 2020</p>
                                             </div>
                                             <div class="ms-auto">
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary btn-xs sharp me-1"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </li>
@@ -602,8 +677,11 @@
                                                 <p>10 Aug 2020</p>
                                             </div>
                                             <div class="ms-auto">
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary btn-xs sharp me-1"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </li>
@@ -614,8 +692,11 @@
                                                 <p>10 Aug 2020</p>
                                             </div>
                                             <div class="ms-auto">
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary btn-xs sharp me-1"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </li>
@@ -626,8 +707,11 @@
                                                 <p>10 Aug 2020</p>
                                             </div>
                                             <div class="ms-auto">
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary btn-xs sharp me-1"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
                                             </div>
                                         </div>
                                     </li>
@@ -649,19 +733,14 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Dashboard Dark </div>
+                                Admin Dashboard </div>
                         </div>
                         <ul class="navbar-nav header-right">
-                            {{-- <li class="nav-item d-flex align-items-center">
-                                <div class="input-group search-area">
-                                    <input type="text" class="form-control" placeholder="Search here...">
-                                    <span class="input-group-text"><a href="javascript:void(0)"><i
-                                                class="flaticon-381-search-2"></i></a></span>
-                                </div>
-                            </li> --}}
                             <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                    <img src="{{ asset('assets/public/assets/images/user.jpg') }}" width="20" alt="" />
+                                <a class="nav-link" href="javascript:void(0);" role="button"
+                                    data-bs-toggle="dropdown">
+                                    <img src="{{ asset('assets/public/assets/images/user.jpg') }}" width="20"
+                                        alt="" />
                                     <div class="header-info ms-3">
                                         <span class="fs-18 font-w500 mb-2">{{ auth()->user()->name }}</span>
                                         <small class="fs-12 font-w400">{{ auth()->user()->email }}</small>
@@ -669,14 +748,20 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <a href="app-profile.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                             <circle cx="12" cy="7" r="4"></circle>
                                         </svg>
                                         <span class="ms-2">Profile </span>
                                     </a>
                                     <a href="page-login.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                             <polyline points="16 17 21 12 16 7"></polyline>
                                             <line x1="21" y1="12" x2="9" y2="12">
@@ -699,48 +784,18 @@
         <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a href="{{ route('dashboard') }}">
                             <i class="fas fa-home"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="index.html">Dashboard Light</a></li>
-                            <li><a href="index-2.html">Dashboard Dark</a></li>
-                            <li><a href="kanban.html">Kanban</a></li>
-                            <li><a href="clients.html">Clients</a></li>
-                            <li><a href="project-details.html">Project Details</a></li>
-                            <li><a href="message.html">Messages</a></li>
-                            <li><a href="latest-activity.html">Latest Activity</a></li>
-                        </ul>
-
                     </li>
 
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="nav-text">Apps</span>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-bus"></i>
+                            <span class="nav-text">Vehicales</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="app-profile.html">Profile</a></li>
-                            <li><a href="post-details.html">Post Details</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="email-compose.html">Compose</a></li>
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="app-calender.html">Calendar</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="ecom-product-grid.html">Product Grid</a></li>
-                                    <li><a href="ecom-product-list.html">Product List</a></li>
-                                    <li><a href="ecom-product-detail.html">Product Details</a></li>
-                                    <li><a href="ecom-product-order.html">Order</a></li>
-                                    <li><a href="ecom-checkout.html">Checkout</a></li>
-                                    <li><a href="ecom-invoice.html">Invoice</a></li>
-                                    <li><a href="ecom-customers.html">Customers</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('Add.Vehicale') }}">Add New</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -841,16 +896,11 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="plus-box">
-                    <div class="text-center">
-                        <h4 class="fs-18 font-w600 mb-4">Enable Workload Automation System</h4>
-                        <a href="javascript:void(0);" class="btn btn-primary btn-rounded">Learn more <i class="fas fa-caret-right"></i></a>
-                    </div>
-                </div>
 
                 <div class="copyright">
-                    <p><strong>Workload Project Management</strong> © 2024 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span> by DexignLab</p>
+                    <p><strong>{{ env('APP_NAME') }} Project Management</strong> © 2024 All Rights Reserved</p>
+                    <p class="fs-12">Made with <span class="heart"></span> for {{ env('APP_NAME') }}</p>
+
                 </div>
             </div>
         </div>
