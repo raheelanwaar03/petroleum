@@ -11,4 +11,5 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('Add/Vehicale', [VehicalesController::class, 'add'])->name('Add.Vehicale');
+Route::get('/Vehicale', [VehicalesController::class, 'index'])->name('Add.Vehicale');
+Route::post('/Store/Vehicale', [VehicalesController::class, 'store'])->name('Store.Vehicale');

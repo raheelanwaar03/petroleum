@@ -38,6 +38,9 @@
             <div></div>
         </div>
     </div>
+
+    <x-alert />
+
     <!--*******************
         Preloader end
     ********************-->
@@ -795,7 +798,7 @@
                             <span class="nav-text">Vehicales</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Add.Vehicale') }}">Add New</a></li>
+                            <li><a href="{{ route('Add.Vehicale') }}">Show All</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
