@@ -13,8 +13,8 @@
                                     <div class="card" id="user-activity">
                                         <div class="card-header border-0 pb-0 flex-wrap">
                                             <div>
-                                                <span class="mb-3 d-block fs-16">Current Balance</span>
-                                                <h4 class="fs-24 font-w700 mb-3">$ 24,567.33</h4>
+                                                <span class="mb-3 d-block fs-16">Total Record</span>
+                                                <h4 class="fs-24 font-w700 mb-3">5</h4>
                                             </div>
                                             <div class="current-icon">
                                                 <a href="javascript:void(0);"><i class="fas fa-long-arrow-alt-up"></i></a>

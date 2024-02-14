@@ -28,6 +28,9 @@
 </head>
 
 <body class="vh-100">
+
+    <x-alert />
+
     <div class="authincation h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">
@@ -75,19 +78,21 @@
                                         @csrf
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" placeholder="hello@example.com">
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="hello@example.com">
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" placeholder="Password">
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Password">
                                         </div>
                                         <div class="row d-flex justify-content-between mt-4 mb-2">
                                             <div class="mb-3">
                                                 <div class="form-check custom-checkbox ms-1">
                                                     <input type="checkbox" class="form-check-input"
                                                         id="basic_checkbox_1">
-                                                    <label class="form-check-label" for="basic_checkbox_1">Remember my
-                                                        preference</label>
+                                                    <label class="form-check-label" for="basic_checkbox_1">Remember
+                                                        me</label>
                                                 </div>
                                             </div>
                                             <div class="mb-3">
