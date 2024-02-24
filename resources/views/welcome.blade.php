@@ -91,7 +91,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <a href="{{ route('password.email') }}">Forgot Password?</a>
+                                                {{-- <a href="{{ route('password.email') }}">Forgot Password?</a> --}}
                                             </div>
                                         </div>
                                         <div class="text-center">
