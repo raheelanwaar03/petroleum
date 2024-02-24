@@ -59,7 +59,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Add New Vehicle</h5>
+                            <h5 class="modal-title">Add New User</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal">
                             </button>
                         </div>
