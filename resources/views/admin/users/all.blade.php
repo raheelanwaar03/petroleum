@@ -18,6 +18,7 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Password</th>
                                             <th>Role</th>
                                             <th>Adding Date</th>
                                             <th>Action</th>
@@ -28,6 +29,7 @@
                                             <tr>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->email }}</td>
+                                                <td>{{ $item->password }}</td>
                                                 <td>{{ $item->role }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
@@ -41,6 +43,7 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Password</th>
                                             <th>Role</th>
                                             <th>Adding Date</th>
                                             <th>Action</th>
