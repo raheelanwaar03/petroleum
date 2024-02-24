@@ -33,7 +33,10 @@
                                                 <td>{{ $item->province }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                                    <a href="{{ route('Edit.Vehicale', $item->id) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
+                                                    <a href="{{ route('Delete.Vehicale', $item->id) }}"
+                                                        class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @empty

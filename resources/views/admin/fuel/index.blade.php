@@ -59,7 +59,10 @@
                                                 </td>
                                                 <td>{{ $item->date }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                                    <a href="{{ route('Edit.Recored', $item->id) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
+                                                    <a href="{{ route('Delete.Recored', $item->id) }}"
+                                                        class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @empty

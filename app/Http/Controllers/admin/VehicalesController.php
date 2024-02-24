@@ -24,4 +24,31 @@ class VehicalesController extends Controller
         $vehicle->save();
         return redirect()->back()->with('success', 'Vehicle added successfully');
     }
+
+    public function edit($id)
+    {
+        $vehicle = Vehicle::find($id);
+        return view('admin.vehicales.edit',compact('vehicle'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $vehicle = Vehicle::find($id);
+        $vehicle->name = $request->name;
+        $vehicle->number = $request->number;
+        $vehicle->model = $request->model;
+        $vehicle->province = $request->province;
+        $vehicle->save();
+        return redirect()->back()->with('success','Vehile detials updated');
+
+    }
+
+    public function delete($id)
+    {
+        $vehicle = Vehicle::find($id);
+        $vehicle->delete();
+        return redirect()->back()->with('success','Vehicle Deleted');
+    }
+
+
 }
