@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\admin\BuyingPetrolRecored;
+use App\Http\Controllers\admin\ExpenseController;
 use App\Http\Controllers\admin\FuelRecoredController;
 use App\Http\Controllers\admin\UserMangementController;
 use App\Http\Controllers\admin\VehicalesController;
+use App\Models\admin\Expense;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,3 +36,6 @@ Route::post('/Store/Buying/Recored',[BuyingPetrolRecored::class,'store'])->name(
 Route::get('/Edit/Buying/Recored/{id}',[BuyingPetrolRecored::class,'edit'])->name('Edit.Buying.Record');
 Route::post('/Update/Buying/Recored/{id}',[BuyingPetrolRecored::class,'update'])->name('Update.Buying.Record');
 Route::get('/Delete/Buying/Recored/{id}',[BuyingPetrolRecored::class,'delete'])->name('Delete.Buying.Record');
+// expense routes
+Route::get('/Add/Expense/Categroy',[ExpenseController::class,'add'])->name('Add.Expense.Category');
+Route::post('/Store/Expense/Categroy',[ExpenseController::class,'store'])->name('store.Expense.Category');
