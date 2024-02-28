@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BuyingPetrolRecored;
 use App\Http\Controllers\admin\FuelRecoredController;
 use App\Http\Controllers\admin\UserMangementController;
 use App\Http\Controllers\admin\VehicalesController;
@@ -27,3 +28,9 @@ Route::get('/Delete/Selling/Record/{id}',[FuelRecoredController::class,'delete']
 // Users routes
 Route::get('/All/Users',[UserMangementController::class,'all'])->name('All.Users');
 Route::post('/Add/User',[UserMangementController::class,'add'])->name('Add.User');
+// buying recored
+Route::get('/Buying/Recored',[BuyingPetrolRecored::class,'index'])->name('Buying.Record');
+Route::post('/Store/Buying/Recored',[BuyingPetrolRecored::class,'store'])->name('Store.Buying.Record');
+Route::get('/Edit/Buying/Recored/{id}',[BuyingPetrolRecored::class,'edit'])->name('Edit.Buying.Record');
+Route::post('/Update/Buying/Recored/{id}',[BuyingPetrolRecored::class,'update'])->name('Update.Buying.Record');
+Route::get('/Delete/Buying/Recored/{id}',[BuyingPetrolRecored::class,'delete'])->name('Delete.Buying.Record');

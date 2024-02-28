@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Sold Petrol Data</h4>
+                            <h4 class="card-title">Buying Petrol Data</h4>
                             <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModalCenter">Add New</button>
                         </div>
@@ -32,7 +32,7 @@
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Buyer</th>
+                                            <th>Seller</th>
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
@@ -44,7 +44,7 @@
                                     <tbody>
                                         @forelse ($records as $item)
                                             <tr>
-                                                <td>{{ $item->buyer }}</td>
+                                                <td>{{ $item->seller }}</td>
                                                 <td>{{ $item->liter }}</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
@@ -59,9 +59,9 @@
                                                 </td>
                                                 <td>{{ $item->date }}</td>
                                                 <td>
-                                                    <a href="{{ route('Edit.Recored', $item->id) }}"
+                                                    <a href="{{ route('Edit.Buying.Record', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
-                                                    <a href="{{ route('Delete.Recored', $item->id) }}"
+                                                    <a href="{{ route('Delete.Buying.Record', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>
@@ -70,7 +70,7 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Buyer</th>
+                                            <th>Seller</th>
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
@@ -94,27 +94,27 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{ route('Store.Recored') }}" method="POST">
+                            <form action="{{ route('Store.Buying.Record') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="liter">Liter</label>
-                                    <input type="text" name="liter" required class="form-control" id="liter"
+                                    <input type="number" name="liter" required class="form-control" id="liter"
                                         placeholder="20 liter">
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price</label>
-                                    <input type="text" name="price" class="form-control" id="price" required
+                                    <input type="number" name="price" class="form-control" id="price" required
                                         placeholder="274.80 pkr">
                                 </div>
                                 <div class="form-group">
                                     <label for="total_price">Total Price</label>
-                                    <input type="text" name="total_price" class="form-control" id="total_price" required
+                                    <input type="number" name="total_price" class="form-control" id="total_price" required
                                         placeholder="10,000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="buyer">Buyer Name</label>
-                                    <input type="text" name="buyer" class="form-control" required id="buyer"
-                                        placeholder="Buyer Name">
+                                    <label for="seller">Seller Name</label>
+                                    <input type="text" name="seller" class="form-control" required id="seller"
+                                        placeholder="Seller Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="payment">Payment</label>

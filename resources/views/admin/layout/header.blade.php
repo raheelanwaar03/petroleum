@@ -170,7 +170,8 @@
                             <span class="nav-text">Fuel Record</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('All.Recored') }}">Show All</a></li>
+                            <li><a href="{{ route('All.Recored') }}">Sold Petrol</a></li>
+                            <li><a href="{{ route('Buying.Record') }}">Buying Petrol</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
