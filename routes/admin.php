@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\BuyingPetrolRecored;
 use App\Http\Controllers\admin\ExpenseController;
 use App\Http\Controllers\admin\FuelRecoredController;
 use App\Http\Controllers\admin\PumpController;
+use App\Http\Controllers\admin\SalaryMangementController;
 use App\Http\Controllers\admin\UserMangementController;
 use App\Http\Controllers\admin\VehicalesController;
 use App\Models\admin\Expense;
@@ -50,3 +51,7 @@ Route::get('/Delete/Pump/{id}', [PumpController::class, 'delete'])->name('Delete
 Route::get('Add/Broker',[BrokerController::class,'add'])->name('Add.Broker');
 Route::post('Store/Broker/Data',[BrokerController::class,'store'])->name('Store.Broker');
 Route::get('All/Broker/Data',[BrokerController::class,'index'])->name('All.Broker');
+// Salary Routes
+Route::get('Add/Salary',[SalaryMangementController::class,'add'])->name('Add.Salary');
+Route::post('Store/Salary',[SalaryMangementController::class,'store'])->name('Store.Salary');
+Route::get('All/Salary/Details',[SalaryMangementController::class,'details'])->name('All.Salary.Details');

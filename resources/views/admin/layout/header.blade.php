@@ -200,7 +200,7 @@
                             <li><a href="{{ route('All.Pumps') }}">All Pumps</a></li>
                         </ul>
                     </li>
-                   <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fas fa-table"></i>
                             <span class="nav-text">Broker</span>
                         </a>
@@ -209,26 +209,15 @@
                             <li><a href="{{ route('All.Broker') }}">All Broker</a></li>
                         </ul>
                     </li>
-                     {{-- <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fas fa-clone"></i>
-                            <span class="nav-text">Pages</span>
+                            <span class="nav-text">Staff Salary</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="page-login.html">Login</a></li>
-                            <li><a href="page-register.html">Register</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="page-error-400.html">Error 400</a></li>
-                                    <li><a href="page-error-403.html">Error 403</a></li>
-                                    <li><a href="page-error-404.html">Error 404</a></li>
-                                    <li><a href="page-error-500.html">Error 500</a></li>
-                                    <li><a href="page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                            <li><a href="page-empty.html">Empty Page</a></li>
+                            <li><a href="{{ route('Add.Salary') }}">Add Salary Recored</a></li>
+                            <li><a href="{{ route('All.Salary.Details') }}">See Recored</a></li>
                         </ul>
-                    </li> --}}
+                    </li>
                 </ul>
 
                 <div class="copyright">
