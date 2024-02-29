@@ -187,7 +187,8 @@
                             <span class="nav-text">Expense</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Add.Expense.Category') }}">Add Categorey</a></li>
+                            <li><a href="{{ route('Add.Expense') }}">Add Categorey</a></li>
+                            <li><a href="{{ route('All.Expense') }}">All Categorey</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">

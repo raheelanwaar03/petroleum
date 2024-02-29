@@ -16,9 +16,16 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         $expense = new Expense();
-        $expense->type = $request->expense;
+        $expense->type = $request->type;
+        $expense->amount = $request->amount;
         $expense->save();
         return redirect()->back()->with('success','Added');
+    }
+
+    public function index()
+    {
+        $expenses = Expense::get();
+        return view('admin.Expense.index',compact('expenses'));
     }
 
 
