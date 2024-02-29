@@ -183,31 +183,23 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
-                        <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-credit-card"></i>
                             <span class="nav-text">Expense</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Add.Expense.Category') }}">Add Categorey</a></li>
                         </ul>
                     </li>
-                    {{-- <li><a href="widget-basic.html" class="" aria-expanded="false">
-                            <i class="fas fa-user-check"></i>
-                            <span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
-                            <i class="fas fa-file-alt"></i>
-                            <span class="nav-text">Forms</span>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <img src="{{ asset('assets/pump.jpg') }}" alt="pump icon" height="30px"
+                                width="30px">
+                            <span class="nav-text">Pumps</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="form-element.html">Form Elements</a></li>
-                            <li><a href="form-wizard.html">Wizard</a></li>
-                            <li><a href="form-editor.html">CkEditor</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation.html">Form Validate</a></li>
+                            <li><a href="{{ route('All.Pumps') }}">All Pumps</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    {{-- <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fas fa-table"></i>
                             <span class="nav-text">Table</span>
                         </a>

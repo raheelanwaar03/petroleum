@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\BuyingPetrolRecored;
 use App\Http\Controllers\admin\ExpenseController;
 use App\Http\Controllers\admin\FuelRecoredController;
+use App\Http\Controllers\admin\PumpController;
 use App\Http\Controllers\admin\UserMangementController;
 use App\Http\Controllers\admin\VehicalesController;
 use App\Models\admin\Expense;
@@ -39,3 +40,7 @@ Route::get('/Delete/Buying/Recored/{id}',[BuyingPetrolRecored::class,'delete'])-
 // expense routes
 Route::get('/Add/Expense/Categroy',[ExpenseController::class,'add'])->name('Add.Expense.Category');
 Route::post('/Store/Expense/Categroy',[ExpenseController::class,'store'])->name('store.Expense.Category');
+// pumps routes
+Route::get('/All/Pumps',[PumpController::class,'index'])->name('All.Pumps');
+Route::post('/Store/Pump',[PumpController::class,'store'])->name('Store.Pump');
+Route::get('/Delete/Pump/{id}',[PumpController::class,'delete'])->name('Delete.Pump');
