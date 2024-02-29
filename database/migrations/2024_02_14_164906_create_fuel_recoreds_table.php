@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('total_price');
             $table->string('buyer');
             $table->string('date');
+            $table->string('fuel');
             $table->string('status');
             $table->timestamps();
         });

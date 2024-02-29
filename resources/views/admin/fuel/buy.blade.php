@@ -32,6 +32,7 @@
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
+                                            <th>Fuel</th>
                                             <th>Seller</th>
                                             <th>Liter</th>
                                             <th>Price</th>
@@ -44,6 +45,7 @@
                                     <tbody>
                                         @forelse ($records as $item)
                                             <tr>
+                                                <td>{{ $item->fuel }}</td>
                                                 <td>{{ $item->seller }}</td>
                                                 <td>{{ $item->liter }}</td>
                                                 <td>{{ $item->price }}</td>
@@ -70,6 +72,7 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th>Fuel</th>
                                             <th>Seller</th>
                                             <th>Liter</th>
                                             <th>Price</th>
@@ -97,14 +100,22 @@
                             <form action="{{ route('Store.Buying.Record') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="liter">Liter</label>
-                                    <input type="number" name="liter" required class="form-control" id="liter"
-                                        placeholder="20 liter">
+                                    <label for="fuel">Fuel</label>
+                                    <select name="fuel" class="form-control" required id="fuel">
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Solvent">Solvent</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price</label>
                                     <input type="number" name="price" class="form-control" id="price" required
                                         placeholder="274.80 pkr">
+                                </div>
+                                <div class="form-group">
+                                    <label for="liter">Liter</label>
+                                    <input type="number" name="liter" required class="form-control" id="liter"
+                                        placeholder="20 liter">
                                 </div>
                                 <div class="form-group">
                                     <label for="total_price">Total Price</label>

@@ -11,12 +11,13 @@ class BuyingPetrolRecored extends Controller
     public function index()
     {
         $records = AdminBuyingPetrolRecored::get();
-        return view('admin.fuel.buy',compact('records'));
+        return view('admin.fuel.buy', compact('records'));
     }
 
     public function store(Request $request)
     {
         $record = new AdminBuyingPetrolRecored();
+        $record->fuel = $request->fuel;
         $record->liter = $request->liter;
         $record->price = $request->price;
         $record->total_price = $request->total_price;
@@ -35,14 +36,15 @@ class BuyingPetrolRecored extends Controller
 
     public function update(Request $request, $id)
     {
-        $fuel = AdminBuyingPetrolRecored::find($id);
-        $fuel->liter = $request->liter;
-        $fuel->price = $request->price;
-        $fuel->total_price = $request->total_price;
-        $fuel->seller = $request->seller;
-        $fuel->date = $request->date;
-        $fuel->status = $request->status;
-        $fuel->save();
+        $record = AdminBuyingPetrolRecored::find($id);
+        $record->fuel = $request->fuel;
+        $record->liter = $request->liter;
+        $record->price = $request->price;
+        $record->total_price = $request->total_price;
+        $record->seller = $request->seller;
+        $record->date = $request->date;
+        $record->status = $request->status;
+        $record->save();
         return redirect()->route('Buying.Record')->with('success', 'Updated Successfully');
     }
 
@@ -50,8 +52,6 @@ class BuyingPetrolRecored extends Controller
     {
         $fuel = AdminBuyingPetrolRecored::find($id);
         $fuel->delete();
-        return redirect()->back()->with('success','Deleted Successsfully!');
+        return redirect()->back()->with('success', 'Deleted Successsfully!');
     }
-
-
 }

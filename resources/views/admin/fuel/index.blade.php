@@ -32,6 +32,7 @@
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
+                                            <th>Fuel</th>
                                             <th>Buyer</th>
                                             <th>Liter</th>
                                             <th>Price</th>
@@ -44,6 +45,7 @@
                                     <tbody>
                                         @forelse ($records as $item)
                                             <tr>
+                                                <td>{{ $item->fuel }}</td>
                                                 <td>{{ $item->buyer }}</td>
                                                 <td>{{ $item->liter }}</td>
                                                 <td>{{ $item->price }}</td>
@@ -70,6 +72,7 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th>Fuel</th>
                                             <th>Buyer</th>
                                             <th>Liter</th>
                                             <th>Price</th>
@@ -96,6 +99,14 @@
                         <div class="modal-body">
                             <form action="{{ route('Store.Recored') }}" method="POST">
                                 @csrf
+                                <div class="form-group">
+                                    <label for="fuel">Fuel</label>
+                                    <select name="fuel" class="form-control" required id="fuel">
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Solvent">Solvent</option>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="liter">Liter</label>
                                     <input type="text" name="liter" required class="form-control" id="liter"

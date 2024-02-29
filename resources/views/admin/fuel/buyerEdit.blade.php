@@ -13,6 +13,14 @@
                             <form action="{{ route('Update.Buying.Record', $fuel->id) }}" method="POST">
                                 @csrf
                                 <div class="form-group">
+                                    <label for="fuel">Fuel</label>
+                                    <select name="fuel" class="form-control" required id="fuel">
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Solvent">Solvent</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="liter">Liter</label>
                                     <input type="number" name="liter" value="{{ $fuel->liter }}" class="form-control"
                                         id="liter" placeholder="20 liter">

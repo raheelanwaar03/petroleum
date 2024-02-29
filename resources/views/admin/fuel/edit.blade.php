@@ -13,9 +13,17 @@
                             <form action="{{ route('Update.Recored', $fuel->id) }}" method="POST">
                                 @csrf
                                 <div class="form-group">
+                                    <label for="fuel">Fuel</label>
+                                    <select name="fuel" class="form-control" required id="fuel">
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Solvent">Solvent</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="liter">Liter</label>
-                                    <input type="text" name="liter" value="{{ $fuel->liter }}"
-                                        class="form-control" id="liter" placeholder="20 liter">
+                                    <input type="text" name="liter" value="{{ $fuel->liter }}" class="form-control"
+                                        id="liter" placeholder="20 liter">
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price</label>
@@ -30,7 +38,7 @@
                                 <div class="form-group">
                                     <label for="buyer">Consumer</label>
                                     <input type="text" name="buyer" value="{{ $fuel->buyer }}" class="form-control"
-                                     id="buyer" placeholder="Buyer Name">
+                                        id="buyer" placeholder="Buyer Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="payment">Payment</label>
