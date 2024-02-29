@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BrokerController;
 use App\Http\Controllers\admin\BuyingPetrolRecored;
 use App\Http\Controllers\admin\ExpenseController;
 use App\Http\Controllers\admin\FuelRecoredController;
@@ -45,3 +46,7 @@ Route::post('/Store/Expense/Categroy', [ExpenseController::class, 'store'])->nam
 Route::get('/All/Pumps', [PumpController::class, 'index'])->name('All.Pumps');
 Route::post('/Store/Pump', [PumpController::class, 'store'])->name('Store.Pump');
 Route::get('/Delete/Pump/{id}', [PumpController::class, 'delete'])->name('Delete.Pump');
+// Broker routes
+Route::get('Add/Broker',[BrokerController::class,'add'])->name('Add.Broker');
+Route::post('Store/Broker/Data',[BrokerController::class,'store'])->name('Store.Broker');
+Route::get('All/Broker/Data',[BrokerController::class,'index'])->name('All.Broker');

@@ -187,8 +187,8 @@
                             <span class="nav-text">Expense</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('Add.Expense') }}">Add Categorey</a></li>
-                            <li><a href="{{ route('All.Expense') }}">All Categorey</a></li>
+                            <li><a href="{{ route('Add.Expense') }}">Add Expense</a></li>
+                            <li><a href="{{ route('All.Expense') }}">All Expense</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -200,16 +200,16 @@
                             <li><a href="{{ route('All.Pumps') }}">All Pumps</a></li>
                         </ul>
                     </li>
-                    {{-- <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                   <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fas fa-table"></i>
-                            <span class="nav-text">Table</span>
+                            <span class="nav-text">Broker</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                            <li><a href="{{ route('Add.Broker') }}">Add Broker</a></li>
+                            <li><a href="{{ route('All.Broker') }}">All Broker</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                     {{-- <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fas fa-clone"></i>
                             <span class="nav-text">Pages</span>
                         </a>
