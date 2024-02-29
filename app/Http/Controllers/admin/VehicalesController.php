@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Pump;
 use App\Models\admin\Vehicle;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class VehicalesController extends Controller
 {
     public function index()
     {
+        $pump = Pump::get();
         $vehicles = Vehicle::get();
-        return view('admin.vehicales.index',compact('vehicles'));
+        return view('admin.vehicales.index',compact('vehicles','pump'));
     }
 
     public function store(Request $request)

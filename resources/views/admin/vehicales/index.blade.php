@@ -19,7 +19,7 @@
                                             <th>Name</th>
                                             <th>Number</th>
                                             <th>Model</th>
-                                            <th>province</th>
+                                            <th>Pump</th>
                                             <th>Adding Date</th>
                                             <th>Action</th>
                                         </tr>
@@ -47,7 +47,7 @@
                                             <th>Name</th>
                                             <th>Number</th>
                                             <th>Model</th>
-                                            <th>Provience</th>
+                                            <th>Pump</th>
                                             <th>Adding Date</th>
                                             <th>Action</th>
                                         </tr>
@@ -85,13 +85,11 @@
                                         placeholder="2010 etc.">
                                 </div>
                                 <div class="form-group">
-                                    <label for="province">Province</label>
+                                    <label for="province">Pump</label>
                                     <select name="province" class="form-control" id="type">
-                                        <option value="Punjab">Punjab</option>
-                                        <option value="Sindh">Sindh</option>
-                                        <option value="KPK">KPK</option>
-                                        <option value="Balochistan">Balochistan</option>
-                                        <option value="Islamabad">Islamabad</option>
+                                        @foreach ($pump as $item)
+                                            <option value="{{ $item->pump }}">{{ $item->pump }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                         </div>

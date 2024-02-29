@@ -47,7 +47,7 @@
                                             <tr>
                                                 <td>{{ $item->fuel }}</td>
                                                 <td>{{ $item->buyer }}</td>
-                                                <td>{{ $item->liter }}</td>
+                                                <td>{{ $item->liter }} Liters</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
                                                 <td>
@@ -109,17 +109,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="liter">Liter</label>
-                                    <input type="text" name="liter" required class="form-control" id="liter"
+                                    <input type="number" name="liter" required class="form-control" id="liter"
                                         placeholder="20 liter">
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price</label>
-                                    <input type="text" name="price" class="form-control" id="price" required
+                                    <input type="number" name="price" class="form-control" id="price" required
                                         placeholder="274.80 pkr">
                                 </div>
                                 <div class="form-group">
                                     <label for="total_price">Total Price</label>
-                                    <input type="text" name="total_price" class="form-control" id="total_price" required
+                                    <input type="number" name="total_price" class="form-control" id="total_price" required
                                         placeholder="10,000">
                                 </div>
                                 <div class="form-group">
@@ -132,7 +132,7 @@
                                     <select name="status" class="form-control" id="payment">
                                         <option value="Pending">Pending</option>
                                         <option value="Clear">Clear</option>
-                                        <option value="Few Left">Few Left</option>
+                                        <option value="Remaning">Remaning</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -47,7 +47,7 @@
                                             <tr>
                                                 <td>{{ $item->fuel }}</td>
                                                 <td>{{ $item->seller }}</td>
-                                                <td>{{ $item->liter }}</td>
+                                                <td>{{ $item->liter }} Liters</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
                                                 <td>
@@ -132,7 +132,7 @@
                                     <select name="status" class="form-control" id="payment">
                                         <option value="Pending">Pending</option>
                                         <option value="Clear">Clear</option>
-                                        <option value="Few Left">Few Left</option>
+                                        <option value="Remaning">Remaning</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
