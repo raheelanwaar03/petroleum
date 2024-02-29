@@ -13,8 +13,8 @@
                             <form action="{{ route('store.Expense.Category') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="expense">Expense</label>
-                                    <input type="text" name="expense" class="form-control" id="liter"
+                                    <label for="expense">Expense Type</label>
+                                    <input type="text" name="type" class="form-control" id="liter"
                                         placeholder="Add Expense">
                                 </div>
                                 <div class="mt-3">
