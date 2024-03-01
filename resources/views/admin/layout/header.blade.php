@@ -156,13 +156,12 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
-
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-bus"></i>
-                            <span class="nav-text">Vehicales</span>
+                            <i class="fa fa-users"></i>
+                            <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('All.Vehicale') }}">Show All</a></li>
+                            <li><a href="{{ route('All.Users') }}">All Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -174,14 +173,6 @@
                             <li><a href="{{ route('Buying.Record') }}">Buying Petrol</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-users"></i>
-                            <span class="nav-text">Users</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('All.Users') }}">All Users</a></li>
-                        </ul>
-                    </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-credit-card"></i>
                             <span class="nav-text">Expense</span>
@@ -189,15 +180,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Add.Expense') }}">Add Expense</a></li>
                             <li><a href="{{ route('All.Expense') }}">All Expense</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <img src="{{ asset('assets/pump.jpg') }}" alt="pump icon" height="30px"
-                                width="30px">
-                            <span class="nav-text">Pumps</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('All.Pumps') }}">All Pumps</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -216,6 +198,23 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Add.Salary') }}">Add Salary Recored</a></li>
                             <li><a href="{{ route('All.Salary.Details') }}">See Recored</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <img src="{{ asset('assets/pump.jpg') }}" alt="pump icon" height="30px"
+                                width="30px">
+                            <span class="nav-text">Pumps</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('All.Pumps') }}">All Pumps</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-bus"></i>
+                            <span class="nav-text">Vehicales</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('All.Vehicale') }}">Show All</a></li>
                         </ul>
                     </li>
                 </ul>

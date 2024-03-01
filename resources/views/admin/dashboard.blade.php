@@ -68,7 +68,7 @@
                                 <div class="card-body user-profile pb-0">
                                     <div class="d-flex align-items-center">
                                         <div class="ms-3 text-start">
-                                            <h4 class="fs-18 font-w600">Residuals</h4>
+                                            <h4 class="fs-18 font-w600">Remaning</h4>
                                         </div>
                                         <div class="p-2">
                                             <h4>({{ few_payment() }})</h4>
