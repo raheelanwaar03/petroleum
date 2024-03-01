@@ -43,15 +43,18 @@ Route::get('/Delete/Buying/Recored/{id}', [BuyingPetrolRecored::class, 'delete']
 Route::get('/Add/Expense', [ExpenseController::class, 'add'])->name('Add.Expense');
 Route::get('/All/Expense', [ExpenseController::class, 'index'])->name('All.Expense');
 Route::post('/Store/Expense/Categroy', [ExpenseController::class, 'store'])->name('store.Expense.Category');
+Route::get('/Edit/Expense/{id}', [ExpenseController::class, 'edit'])->name('Edit.Expense');
+Route::post('/Update/Expense/{id}', [ExpenseController::class, 'update'])->name('Update.Expense');
+Route::get('/Delete/Expense/{id}', [ExpenseController::class, 'delete'])->name('Delete.Expense');
 // pumps routes
 Route::get('/All/Pumps', [PumpController::class, 'index'])->name('All.Pumps');
 Route::post('/Store/Pump', [PumpController::class, 'store'])->name('Store.Pump');
 Route::get('/Delete/Pump/{id}', [PumpController::class, 'delete'])->name('Delete.Pump');
 // Broker routes
-Route::get('Add/Broker',[BrokerController::class,'add'])->name('Add.Broker');
-Route::post('Store/Broker/Data',[BrokerController::class,'store'])->name('Store.Broker');
-Route::get('All/Broker/Data',[BrokerController::class,'index'])->name('All.Broker');
+Route::get('Add/Broker', [BrokerController::class, 'add'])->name('Add.Broker');
+Route::post('Store/Broker/Data', [BrokerController::class, 'store'])->name('Store.Broker');
+Route::get('All/Broker/Data', [BrokerController::class, 'index'])->name('All.Broker');
 // Salary Routes
-Route::get('Add/Salary',[SalaryMangementController::class,'add'])->name('Add.Salary');
-Route::post('Store/Salary',[SalaryMangementController::class,'store'])->name('Store.Salary');
-Route::get('All/Salary/Details',[SalaryMangementController::class,'details'])->name('All.Salary.Details');
+Route::get('Add/Salary', [SalaryMangementController::class, 'add'])->name('Add.Salary');
+Route::post('Store/Salary', [SalaryMangementController::class, 'store'])->name('Store.Salary');
+Route::get('All/Salary/Details', [SalaryMangementController::class, 'details'])->name('All.Salary.Details');

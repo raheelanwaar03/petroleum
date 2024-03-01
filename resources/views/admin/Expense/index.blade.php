@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Buying Petrol Data</h4>
+                            <h4 class="card-title">All Expense</h4>
                             <a href="{{ route('Add.Expense') }}" class="btn btn-primary mb-2">Add New</a>
                         </div>
                         <div class="card-body">
@@ -42,9 +42,9 @@
                                                 <td>{{ $item->type }}</td>
                                                 <td>{{ $item->amount }}</td>
                                                 <td>
-                                                    <a href="{{ route('Edit.Buying.Record', $item->id) }}"
+                                                    <a href="{{ route('Edit.Expense', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
-                                                    <a href="{{ route('Delete.Pump', $item->id) }}"
+                                                    <a href="{{ route('Delete.Expense', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>

@@ -19,13 +19,35 @@ class ExpenseController extends Controller
         $expense->type = $request->type;
         $expense->amount = $request->amount;
         $expense->save();
-        return redirect()->back()->with('success','Added');
+        return redirect()->back()->with('success', 'Added');
     }
 
     public function index()
     {
         $expenses = Expense::get();
-        return view('admin.Expense.index',compact('expenses'));
+        return view('admin.Expense.index', compact('expenses'));
+    }
+
+    public function edit($id)
+    {
+        $expense = Expense::find($id);
+        return view('admin.Expense.edit', compact('expense'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $expense = Expense::find($id);
+        $expense->type = $request->type;
+        $expense->amount = $request->amount;
+        $expense->save();
+        return redirect(route('All.Expense'))->with('success', 'Edited Successfully');
+    }
+
+    public function delete($id)
+    {
+        $expense = Expense::find($id);
+        $expense->delete();
+        return redirect()->back()->with('success','Deleted successfully');
     }
 
 
