@@ -54,7 +54,7 @@
             <a href="{{ route('dashboard') }}" class="brand-logo">
                 <img src="{{ asset('assets/public/assets/images/logo.png') }}" height="40px" width="40px" alt="">
                 <div class="brand-title">
-                    <h2 class="">{{ env('APP_NAME') }}</h2>
+                    <h2 class=""></h2>
                     <span class="brand-sub-title">Recored Management System</span>
                 </div>
             </a>
