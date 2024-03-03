@@ -15,6 +15,11 @@ class BrokerController extends Controller
         return view('admin.broker.index', compact('broker'));
     }
 
+    public function edit($id)
+    {
+        $broker = Broker::find($id);
+        return view('admin.broker.edit', compact('broker'));
+    }
 
     public function add()
     {
@@ -30,4 +35,16 @@ class BrokerController extends Controller
         $broker->save();
         return redirect()->back()->with('success', 'Broker added successfully');
     }
+
+    public function update(Request $request,$id)
+    {
+        $broker = Broker::find($id);
+        $broker->name = $request->name;
+        $broker->amount = $request->amount;
+        $broker->note = $request->note;
+        $broker->save();
+        return redirect()->route('All.Broker')->with('success','Updated Successfully');
+
+    }
+
 }

@@ -41,7 +41,7 @@ class VehicalesController extends Controller
         $vehicle->model = $request->model;
         $vehicle->province = $request->province;
         $vehicle->save();
-        return redirect()->back()->with('success','Vehile detials updated');
+        return redirect()->route('All.Vehicale')->with('success','Vehile detials updated');
 
     }
 

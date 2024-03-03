@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Buying Petrol Data</h4>
+                            <h4 class="card-title">All Petrol Pumps</h4>
                             <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModalCenter">Add New</button>
                         </div>
@@ -45,7 +45,7 @@
                                                 <td>{{ $item->owner }}</td>
                                                 <td>{{ $item->location }}</td>
                                                 <td>
-                                                    <a href="{{ route('Edit.Buying.Record', $item->id) }}"
+                                                    <a href="{{ route('Edit.Pump', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
                                                     <a href="{{ route('Delete.Pump', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>

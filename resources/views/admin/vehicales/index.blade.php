@@ -88,7 +88,7 @@
                                     <label for="province">Pump</label>
                                     <select name="province" class="form-control" id="type">
                                         @foreach ($pump as $item)
-                                            <option value="{{ $item->pump }}">{{ $item->pump }}</option>
+                                            <option value="{{ $item->name }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

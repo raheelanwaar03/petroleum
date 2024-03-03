@@ -24,11 +24,26 @@ class PumpController extends Controller
         return redirect()->back()->with('success', 'Pump Added Successfully');
     }
 
+    public function edit($id)
+    {
+        $pump = Pump::find($id);
+        return view('admin.pump.edit', compact('pump'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $pump = Pump::find($id);
+        $pump->name = $request->name;
+        $pump->owner = $request->owner;
+        $pump->location = $request->location;
+        $pump->save();
+        return redirect()->route('All.Pumps')->with('success', 'Updated successfully!');
+    }
+
     public function delete($id)
     {
         $pump = Pump::find($id);
         $pump->delete();
-        return redirect()->back()->with('success','Pump Removed');
+        return redirect()->back()->with('success', 'Pump Removed');
     }
-
 }
