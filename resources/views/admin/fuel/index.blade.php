@@ -37,9 +37,10 @@
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
-                                            <th>Payment</th>
-                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Selling Date</th>
                                             <th>Action</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,15 +51,7 @@
                                                 <td>{{ $item->liter }} Liters</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
-                                                <td>
-                                                    @if ($item->status == 'Pending')
-                                                        <span class="badge badge-danger">{{ $item->status }}</span>
-                                                    @elseif ($item->status == 'Clear')
-                                                        <span class="badge badge-success">{{ $item->status }}</span>
-                                                    @else
-                                                        <span class="badge badge-warning">{{ $item->status }}</span>
-                                                    @endif
-                                                </td>
+                                                <td>{{ $item->status }}</td>
                                                 <td>{{ $item->date }}</td>
                                                 <td>
                                                     <a href="{{ route('Edit.Recored', $item->id) }}"
@@ -66,6 +59,7 @@
                                                     <a href="{{ route('Delete.Recored', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
+                                                <td>{{ $item->created_at }}</td>
                                             </tr>
                                         @empty
                                         @endforelse
@@ -77,9 +71,10 @@
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
-                                            <th>Payment</th>
-                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Selling Date</th>
                                             <th>Action</th>
+                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -101,11 +96,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="fuel">Fuel</label>
-                                    <select name="fuel" class="form-control" required id="fuel">
-                                        <option value="Petrol">Petrol</option>
-                                        <option value="Diesel">Diesel</option>
-                                        <option value="Solvent">Solvent</option>
-                                    </select>
+                                    <input type="text" name="fuel" id="fuel" placeholder="Add Fuel"
+                                        class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="liter">Liter</label>
@@ -118,25 +110,21 @@
                                         placeholder="274.80 pkr">
                                 </div>
                                 <div class="form-group">
-                                    <label for="total_price">Total Price</label>
-                                    <input type="number" name="total_price" class="form-control" id="total_price" required
-                                        placeholder="10,000">
-                                </div>
-                                <div class="form-group">
                                     <label for="buyer">Buyer Name</label>
                                     <input type="text" name="buyer" class="form-control" required id="buyer"
                                         placeholder="Buyer Name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="payment">Payment</label>
-                                    <select name="status" class="form-control" id="payment">
-                                        <option value="Pending">Pending</option>
-                                        <option value="Clear">Clear</option>
-                                        <option value="Remaning">Remaning</option>
-                                    </select>
+                                    <label for="status">Status</label>
+                                    <input type="text" name="status" id="status" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="province">Date</label>
+                                    <label for="note">Note</label>
+                                    <textarea name="note" id="note" cols="30" rows="10" placeholder="Enter further details"
+                                        class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Selling Date</label>
                                     <input type="text" class="form-control" name="date" required
                                         placeholder="2017-06-04" id="mdate">
                                 </div>

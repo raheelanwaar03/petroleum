@@ -16,6 +16,7 @@ class BuyingPetrolRecored extends Controller
 
     public function store(Request $request)
     {
+        return $request;
         $record = new AdminBuyingPetrolRecored();
         $record->fuel = $request->fuel;
         $record->liter = $request->liter;

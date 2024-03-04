@@ -16,14 +16,17 @@ class FuelRecoredController extends Controller
 
     public function store_selling(Request $request)
     {
+        $total_cost = $request->liter * $request->price;
+
         $record = new FuelRecored();
         $record->fuel = $request->fuel;
         $record->liter = $request->liter;
         $record->price = $request->price;
-        $record->total_price = $request->total_price;
+        $record->total_price = $total_cost;
+        $record->status = $request->status;
         $record->buyer = $request->buyer;
         $record->date = $request->date;
-        $record->status = $request->status;
+        $record->note = $request->note;
         $record->save();
         return redirect()->back()->with('success', 'Recored Saved');
     }
