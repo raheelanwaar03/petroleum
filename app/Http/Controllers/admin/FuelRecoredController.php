@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Broker;
 use App\Models\admin\FuelRecored;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,12 @@ class FuelRecoredController extends Controller
 {
     public function index()
     {
+        $broker = Broker::get();
+        if ($broker == null) {
+            return redirect()->route('Add.Broker')->with('error', 'Please add borker first');
+        }
         $records = FuelRecored::get();
-        return view('admin.fuel.index', compact('records'));
+        return view('admin.fuel.index', compact('records', 'broker'));
     }
 
     public function store_selling(Request $request)

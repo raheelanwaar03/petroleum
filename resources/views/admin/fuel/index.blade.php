@@ -111,8 +111,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="buyer">Buyer Name</label>
-                                    <input type="text" name="buyer" class="form-control" required id="buyer"
-                                        placeholder="Buyer Name">
+                                    <select name="buyer" id="buyer" class="form-control">
+                                        @foreach ($broker as $item)
+                                            <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status</label>
