@@ -33,6 +33,8 @@ Route::get('/Delete/Selling/Record/{id}', [FuelRecoredController::class, 'delete
 // Users routes
 Route::get('/All/Users', [UserMangementController::class, 'all'])->name('All.Users');
 Route::post('/Add/User', [UserMangementController::class, 'add'])->name('Add.User');
+Route::get('/Edit/User/{id}', [UserMangementController::class, 'edit'])->name('Edit.User');
+Route::post('/Update/User/{id}', [UserMangementController::class, 'Update'])->name('Update.User');
 // buying recored
 Route::get('/Buying/Recored', [BuyingPetrolRecored::class, 'index'])->name('Buying.Record');
 Route::post('/Store/Buying/Recored', [BuyingPetrolRecored::class, 'store'])->name('Store.Buying.Record');
