@@ -33,7 +33,7 @@ class BrokerController extends Controller
         $broker->amount = $request->amount;
         $broker->note = $request->note;
         $broker->save();
-        return redirect()->back()->with('success', 'Broker added successfully');
+        return redirect()->route('All.Broker')->with('success', 'Broker added successfully');
     }
 
     public function update(Request $request,$id)

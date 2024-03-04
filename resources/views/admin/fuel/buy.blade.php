@@ -37,9 +37,10 @@
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
-                                            <th>Payment</th>
-                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Buying Date</th>
                                             <th>Action</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -58,6 +59,7 @@
                                                     <a href="{{ route('Delete.Buying.Record', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
+                                                <td>{{ $item->created_at }}</td>
                                             </tr>
                                         @empty
                                         @endforelse
@@ -69,9 +71,10 @@
                                             <th>Liter</th>
                                             <th>Price</th>
                                             <th>Total</th>
-                                            <th>Payment</th>
-                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Buying Date</th>
                                             <th>Action</th>
+                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -108,12 +111,21 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="seller">Seller Name</label>
-                                    <input type="text" name="seller" class="form-control" required id="seller"
-                                        placeholder="Seller Name">
+                                    <select name="seller" id="seller" class="form-control">
+                                        @foreach ($broker as $item)
+                                            <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="payment">Payment</label>
-                                    <input type="text" name="payment" id="payment" class="form-control">
+                                    <label for="status">Status</label>
+                                    <input type="text" name="status" placeholder="Enter Payment Status" required
+                                        id="status" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="note">Note</label>
+                                    <textarea name="note" id="note" cols="15" rows="5" placeholder="Enter further details"
+                                        class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="province">Date</label>

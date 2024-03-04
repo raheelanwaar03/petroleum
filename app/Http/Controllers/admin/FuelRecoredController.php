@@ -12,9 +12,6 @@ class FuelRecoredController extends Controller
     public function index()
     {
         $broker = Broker::get();
-        if ($broker == null) {
-            return redirect()->route('Add.Broker')->with('error', 'Please add borker first');
-        }
         $records = FuelRecored::get();
         return view('admin.fuel.index', compact('records', 'broker'));
     }

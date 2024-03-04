@@ -119,11 +119,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status</label>
-                                    <input type="text" name="status" id="status" class="form-control">
+                                    <input type="text" name="status" placeholder="Enter Payment Status" id="status"
+                                        class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="note">Note</label>
-                                    <textarea name="note" id="note" cols="30" rows="10" placeholder="Enter further details"
+                                    <textarea name="note" id="note" cols="15" rows="5" placeholder="Enter further details"
                                         class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">

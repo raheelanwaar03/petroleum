@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('fuel');
             $table->string('status');
+            $table->string('note');
             $table->timestamps();
         });
     }
