@@ -11,7 +11,7 @@ class BuyingPetrolRecored extends Controller
 {
     public function index()
     {
-        $broker = Broker::get();
+        $broker = Broker::where('role','Buyer')->get();
         $records = AdminBuyingPetrolRecored::get();
         return view('admin.fuel.buy', compact('records','broker'));
     }
