@@ -42,7 +42,7 @@
                                             <tr>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->role }}</td>
-                                                <td>{{ $item->note }}</td>
+                                                <td>{{ $item->note ?? 'null'}}</td>
                                                 <td>
                                                     <a href="{{ route('Edit.Broker', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>

@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Sold Petrol Data</h4>
+                            <h4 class="card-title">Selling</h4>
                             <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModalCenter">Add New</button>
                         </div>

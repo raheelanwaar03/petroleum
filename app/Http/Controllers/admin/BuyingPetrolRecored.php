@@ -11,9 +11,9 @@ class BuyingPetrolRecored extends Controller
 {
     public function index()
     {
-        $broker = Broker::where('role','Buyer')->get();
+        $broker = Broker::where('role', 'Buyer')->get();
         $records = AdminBuyingPetrolRecored::get();
-        return view('admin.fuel.buy', compact('records','broker'));
+        return view('admin.fuel.buy', compact('records', 'broker'));
     }
 
     public function store(Request $request)
@@ -28,6 +28,8 @@ class BuyingPetrolRecored extends Controller
         $record->seller = $request->seller;
         $record->date = $request->date;
         $record->status = $request->status;
+        $record->method = $request->method;
+        $record->due_date = $request->due_date;
         $record->note = $request->note;
         $record->save();
         return redirect()->back()->with('success', 'Recored Saved');

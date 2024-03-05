@@ -40,7 +40,7 @@ class BrokerController extends Controller
     {
         $broker = Broker::find($id);
         $broker->name = $request->name;
-        $broker->amount = $request->amount;
+        $broker->role = $request->role;
         $broker->note = $request->note;
         $broker->save();
         return redirect()->route('All.Broker')->with('success','Updated Successfully');

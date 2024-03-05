@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Buying Petrol Data</h4>
+                            <h4 class="card-title">Buying</h4>
                             <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModalCenter">Add New</button>
                         </div>
@@ -38,9 +38,11 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Method</th>
                                             <th>Buying Date</th>
+                                            <th>Due Date</th>
+                                            <th>Note</th>
                                             <th>Action</th>
-                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,14 +54,16 @@
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
                                                 <td>{{ $item->status }}</td>
+                                                <td>{{ $item->method }}</td>
                                                 <td>{{ $item->date }}</td>
+                                                <td>{{ $item->due_date }}</td>
+                                                <td>{{ $item->note ?? 'null'}}</td>
                                                 <td>
                                                     <a href="{{ route('Edit.Buying.Record', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
                                                     <a href="{{ route('Delete.Buying.Record', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                             </tr>
                                         @empty
                                         @endforelse
@@ -72,9 +76,11 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Method</th>
                                             <th>Buying Date</th>
+                                            <th>Due Date</th>
+                                            <th>Note</th>
                                             <th>Action</th>
-                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -97,7 +103,7 @@
                                 <div class="form-group">
                                     <label for="fuel">Fuel</label>
                                     <input type="text" name="fuel" id="fuel" placeholder="Add Fuel"
-                                        class="form-control">
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Price</label>
@@ -111,7 +117,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="seller">Seller Name</label>
-                                    <select name="seller" id="seller" class="form-control">
+                                    <select name="seller" id="seller" required class="form-control">
                                         @foreach ($broker as $item)
                                             <option value="{{ $item->name }}">{{ $item->name }}</option>
                                         @endforeach
@@ -123,14 +129,24 @@
                                         id="status" class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label for="method">Payment Method</label>
+                                    <input type="text" name="method" placeholder="Enter Payment Method" id="method"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="note">Note</label>
                                     <textarea name="note" id="note" cols="15" rows="5" placeholder="Enter further details"
                                         class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="province">Date</label>
+                                    <label for="province">Buying Date</label>
                                     <input type="text" class="form-control" name="date" required
                                         placeholder="2017-06-04" id="mdate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="due">Due Date</label>
+                                    <input type="text" class="form-control" name="due_date" required
+                                        placeholder="Due Date" id="due_date">
                                 </div>
                         </div>
                         <div class="modal-footer">
