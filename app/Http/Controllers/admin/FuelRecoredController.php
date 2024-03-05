@@ -28,6 +28,8 @@ class FuelRecoredController extends Controller
         $record->status = $request->status;
         $record->buyer = $request->buyer;
         $record->date = $request->date;
+        $record->method = $request->method;
+        $record->due_date = $request->due_date;
         $record->note = $request->note;
         $record->save();
         return redirect()->back()->with('success', 'Recored Saved');

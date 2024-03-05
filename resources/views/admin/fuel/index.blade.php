@@ -38,9 +38,11 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Method</th>
                                             <th>Selling Date</th>
+                                            <th>Due Date</th>
+                                            <th>Note</th>
                                             <th>Action</th>
-                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,14 +54,16 @@
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
                                                 <td>{{ $item->status }}</td>
+                                                <td>{{ $item->method }}</td>
                                                 <td>{{ $item->date }}</td>
+                                                <td>{{ $item->due_date }}</td>
+                                                <td>{{ $item->note ?? 'null' }}</td>
                                                 <td>
                                                     <a href="{{ route('Edit.Recored', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
                                                     <a href="{{ route('Delete.Recored', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
                                                 </td>
-                                                <td>{{ $item->created_at }}</td>
                                             </tr>
                                         @empty
                                         @endforelse
@@ -72,9 +76,11 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Method</th>
                                             <th>Selling Date</th>
+                                            <th>Due Date</th>
+                                            <th>Note</th>
                                             <th>Action</th>
-                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -123,6 +129,11 @@
                                         class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label for="method">Payment Method</label>
+                                    <input type="text" name="method" placeholder="Enter Payment Method" id="method"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label for="note">Note</label>
                                     <textarea name="note" id="note" cols="15" rows="5" placeholder="Enter further details"
                                         class="form-control"></textarea>
@@ -131,6 +142,11 @@
                                     <label for="province">Selling Date</label>
                                     <input type="text" class="form-control" name="date" required
                                         placeholder="2017-06-04" id="mdate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="due">Due Date</label>
+                                    <input type="text" class="form-control" name="due_date" required
+                                        placeholder="Due Date" id="due_date">
                                 </div>
                         </div>
                         <div class="modal-footer">
