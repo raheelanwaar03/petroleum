@@ -18,13 +18,15 @@
                                         placeholder="Broker Name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="amount">Amount Given</label>
-                                    <input type="number" name="amount" class="form-control" id="amount" required
-                                        placeholder="Amount Given">
+                                    <label for="role">Role</label>
+                                    <select name="role" class="form-control" required id="role">
+                                        <option value="Seller">Seller</option>
+                                        <option value="Buyer">Buyer</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="note">Note</label>
-                                    <textarea name="note" id="note" class="form-control" cols="30" rows="10"></textarea>
+                                    <textarea name="note" id="note" class="form-control" cols="15" rows="5"></textarea>
                                 </div>
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-primary">Add</button>

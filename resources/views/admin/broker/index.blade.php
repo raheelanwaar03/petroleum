@@ -24,7 +24,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">All Brokers</h4>
-                            <a href="{{ route('Add.Expense') }}" class="btn btn-primary mb-2">Add New</a>
+                            <a href="{{ route('Add.Broker') }}" class="btn btn-primary mb-2">Add New</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -32,7 +32,7 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Amount</th>
+                                            <th>Role</th>
                                             <th>Note</th>
                                             <th>Action</th>
                                         </tr>
@@ -41,13 +41,15 @@
                                         @forelse ($broker as $item)
                                             <tr>
                                                 <td>{{ $item->name }}</td>
-                                                <td>{{ $item->amount }}</td>
+                                                <td>{{ $item->role }}</td>
                                                 <td>{{ $item->note }}</td>
                                                 <td>
                                                     <a href="{{ route('Edit.Broker', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
                                                     <a href="{{ route('Delete.Pump', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
+                                                    <a href="{{ route('Delete.Pump', $item->id) }}"
+                                                        class="btn btn-sm btn-success">Details</a>
                                                 </td>
                                             </tr>
                                         @empty
@@ -56,7 +58,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Amount</th>
+                                            <th>Role</th>
                                             <th>Note</th>
                                             <th>Action</th>
                                         </tr>
