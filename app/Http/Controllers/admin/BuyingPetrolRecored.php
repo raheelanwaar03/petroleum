@@ -37,8 +37,9 @@ class BuyingPetrolRecored extends Controller
 
     public function edit($id)
     {
+        $broker = Broker::where('role', 'Seller')->get();
         $fuel = AdminBuyingPetrolRecored::find($id);
-        return view('admin.fuel.buyerEdit', compact('fuel'));
+        return view('admin.fuel.buyerEdit', compact('fuel', 'broker'));
     }
 
     public function update(Request $request, $id)

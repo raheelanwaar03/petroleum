@@ -14,11 +14,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="fuel">Fuel</label>
-                                    <select name="fuel" class="form-control" required id="fuel">
-                                        <option value="Petrol">Petrol</option>
-                                        <option value="Diesel">Diesel</option>
-                                        <option value="Solvent">Solvent</option>
-                                    </select>
+                                    <input type="text" name="fuel" class="form-control" id="fuel"
+                                        class="from-control" value="{{ $fuel->fuel }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="liter">Liter</label>
@@ -36,22 +33,29 @@
                                         class="form-control" id="total_price" placeholder="10,000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="buyer">Seller</label>
-                                    <input type="text" name="seller" value="{{ $fuel->seller }}" class="form-control"
-                                        id="buyer" placeholder="Seller Name">
+                                    <label for="seller">Seller</label>
+                                    <select name="seller" id="seller" required class="form-control">
+                                        @foreach ($broker as $item)
+                                            <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="payment">Payment</label>
-                                    <select name="status" class="form-control" aria-valuenow="{{ $fuel->status }}"
-                                        id="payment">
-                                        <option value="Pending">Pending</option>
-                                        <option value="Clear">Clear</option>
-                                        <option value="Few Left">Few Left</option>
-                                    </select>
+                                    <label for="status">Status</label>
+                                    <input type="text" class="form-control" value="{{ $fuel->status }}" name="status">
+                                </div>
+                                <div class="form-group">
+                                    <label for="method">Method</label>
+                                    <input type="text" class="form-control" value="{{ $fuel->method }}" name="method">
                                 </div>
                                 <div class="form-group">
                                     <label for="province">Date</label>
                                     <input type="text" class="form-control" value="{{ $fuel->date }}" name="date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="due">Due Date</label>
+                                    <input type="text" class="form-control" value="{{ $fuel->due_date }}"
+                                        name="due_date">
                                 </div>
                                 <div class="mt-3">
                                     <button class="btn btn-primary" type="submit">Update</button>
