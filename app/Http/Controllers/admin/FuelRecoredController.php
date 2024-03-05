@@ -37,21 +37,25 @@ class FuelRecoredController extends Controller
 
     public function edit($id)
     {
+        $broker = Broker::where('role', 'Buyer')->get();
         $fuel = FuelRecored::find($id);
-        return view('admin.fuel.edit', compact('fuel'));
+        return view('admin.fuel.edit', compact('broker','fuel'));
     }
 
     public function update(Request $request, $id)
     {
-        $recored = FuelRecored::find($id);
-        $recored->fuel = $request->fuel;
-        $recored->liter = $request->liter;
-        $recored->price = $request->price;
-        $recored->total_price = $request->total_price;
-        $recored->buyer = $request->buyer;
-        $recored->date = $request->date;
-        $recored->status = $request->status;
-        $recored->save();
+        $record = FuelRecored::find($id);
+        $record->fuel = $request->fuel;
+        $record->liter = $request->liter;
+        $record->price = $request->price;
+        $record->total_price = $request->price;
+        $record->status = $request->status;
+        $record->buyer = $request->buyer;
+        $record->date = $request->date;
+        $record->method = $request->method;
+        $record->due_date = $request->due_date;
+        $record->note = $request->note;
+        $record->save();
         return redirect()->route('All.Recored')->with('success', 'Updated Successfully');
     }
 

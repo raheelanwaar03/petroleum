@@ -52,6 +52,9 @@ class BuyingPetrolRecored extends Controller
         $record->seller = $request->seller;
         $record->date = $request->date;
         $record->status = $request->status;
+        $record->method = $request->method;
+        $record->due_date = $request->due_date;
+        $record->note = $request->note;
         $record->save();
         return redirect()->route('Buying.Record')->with('success', 'Updated Successfully');
     }
