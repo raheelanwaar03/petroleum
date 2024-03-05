@@ -60,6 +60,8 @@ Route::get('All/Broker/Data', [BrokerController::class, 'index'])->name('All.Bro
 Route::post('Store/Broker/Data', [BrokerController::class, 'store'])->name('Store.Broker');
 Route::get('Edit/Broker/Data/{id}', [BrokerController::class, 'edit'])->name('Edit.Broker');
 Route::post('Update/Broker/{id}', [BrokerController::class, 'update'])->name('Update.Broker');
+Route::get('Delete/Broker/{id}', [BrokerController::class, 'delete'])->name('Delete.Broker');
+Route::get('All/Recored/{name}', [BrokerController::class, 'recored'])->name('Broker.All.Recored');
 // Salary Routes
 Route::get('Add/Salary', [SalaryMangementController::class, 'add'])->name('Add.Salary');
 Route::post('Store/Salary', [SalaryMangementController::class, 'store'])->name('Store.Salary');

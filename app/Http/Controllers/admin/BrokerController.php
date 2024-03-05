@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Broker;
+use App\Models\admin\BuyingPetrolRecored;
+use App\Models\admin\FuelRecored;
 use Illuminate\Http\Request;
 
 class BrokerController extends Controller
@@ -28,6 +30,11 @@ class BrokerController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => ['required', 'unique:' . Broker::class],
+            'role' => 'required',
+        ]);
+
         $broker = new Broker();
         $broker->name = $request->name;
         $broker->role = $request->role;
@@ -36,15 +43,31 @@ class BrokerController extends Controller
         return redirect()->route('All.Broker')->with('success', 'Broker added successfully');
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $broker = Broker::find($id);
         $broker->name = $request->name;
         $broker->role = $request->role;
         $broker->note = $request->note;
         $broker->save();
-        return redirect()->route('All.Broker')->with('success','Updated Successfully');
-
+        return redirect()->route('All.Broker')->with('success', 'Updated Successfully');
     }
 
+    public function delete($id)
+    {
+        $broker = Broker::find($id);
+        $broker->delete();
+        return redirect()->route('All.Broker')->with('success', 'Deleted Successfully');
+    }
+
+    public function recored($name)
+    {
+        $check = Broker::where('name', $name)->first();
+        if ($check->role == 'Seller') {
+            $recored = FuelRecored::where('buyer', $name)->get();
+        } elseif ($check->role == 'Buyer') {
+            $recored = BuyingPetrolRecored::where('seller', $name)->get();
+        }
+        return view('admin.broker.recored', compact('recored', 'name'));
+    }
 }

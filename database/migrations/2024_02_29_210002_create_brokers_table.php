@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('brokers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('role');
             $table->text('note')->nullable();
             $table->timestamps();

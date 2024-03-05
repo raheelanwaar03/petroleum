@@ -23,33 +23,44 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Brokers</h4>
-                            <a href="{{ route('Add.Broker') }}" class="btn btn-primary mb-2">Add New</a>
+                            <h4 class="card-title">All Transcations with {{ $name }}</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Role</th>
+                                            <th>Fuel</th>
+                                            <th>Buyer</th>
+                                            <th>Liter</th>
+                                            <th>Price</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                            <th>Method</th>
+                                            <th>Selling Date</th>
+                                            <th>Due Date</th>
                                             <th>Note</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($broker as $item)
+                                        @forelse ($recored as $item)
                                             <tr>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->role }}</td>
+                                                <td>{{ $item->fuel }}</td>
+                                                <td>{{ $item->buyer }}</td>
+                                                <td>{{ $item->liter }} Liters</td>
+                                                <td>{{ $item->price }}</td>
+                                                <td>{{ $item->total_price }}</td>
+                                                <td>{{ $item->status }}</td>
+                                                <td>{{ $item->method }}</td>
+                                                <td>{{ $item->date }}</td>
+                                                <td>{{ $item->due_date }}</td>
                                                 <td>{{ $item->note ?? 'null' }}</td>
                                                 <td>
-                                                    <a href="{{ route('Edit.Broker', $item->id) }}"
+                                                    <a href="{{ route('Edit.Recored', $item->id) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
-                                                    <a href="{{ route('Delete.Broker', $item->id) }}"
+                                                    <a href="{{ route('Delete.Recored', $item->id) }}"
                                                         class="btn btn-sm btn-danger">Delete</a>
-                                                    <a href="{{ route('Broker.All.Recored', $item->name) }}"
-                                                        class="btn btn-sm btn-success">Details</a>
                                                 </td>
                                             </tr>
                                         @empty
@@ -57,8 +68,15 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Role</th>
+                                            <th>Fuel</th>
+                                            <th>Buyer</th>
+                                            <th>Liter</th>
+                                            <th>Price</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                            <th>Method</th>
+                                            <th>Selling Date</th>
+                                            <th>Due Date</th>
                                             <th>Note</th>
                                             <th>Action</th>
                                         </tr>
@@ -74,7 +92,6 @@
 @endsection
 
 @section('script')
-    {{-- datatabel --}}
     <script src="{{ asset('assets/public/assets/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/public/assets/js/plugins-init/datatables.init.js') }}"></script>
 @endsection

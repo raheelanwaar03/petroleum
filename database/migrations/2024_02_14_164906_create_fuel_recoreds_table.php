@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('fuel_recoreds', function (Blueprint $table) {
             $table->id();
             $table->string('liter');
-            $table->string('price');
             $table->string('total_price');
+            $table->string('price');
             $table->string('buyer');
             $table->string('date');
             $table->string('fuel');
