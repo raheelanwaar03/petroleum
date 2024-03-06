@@ -162,8 +162,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="due">Due Date</label>
-                                    <input type="text" class="form-control" name="due_date" required
-                                        placeholder="Due Date" id="due_date">
+                                    <input type="text" name="due_date" class="datepicker-default form-control"
+                                        id="datepicker">
                                 </div>
                         </div>
                         <div class="modal-footer">
