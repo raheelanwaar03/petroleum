@@ -68,7 +68,23 @@ class BrokerController extends Controller
         } elseif ($check->role == 'Buyer') {
             $recored = BuyingPetrolRecored::where('seller', $name)->get();
         }
+        $creadit = 0;
+        $total_advance = 0;
+        $pre_amount = 0;
+        $debit = 0;
+        foreach ($recored as $item) {
+            if($item->status == 'Advance')
+            {
+                $debit += $item->remaning;
+                $pre_amount += $item->advance;
+            }
+            if($item->status == 'Clear')
+            {
+                $creadit += $item->total_price;
+                $total_advance = $creadit + $pre_amount;
+            }
+        }
         $role = $check->role;
-        return view('admin.broker.recored', compact('recored', 'name', 'role'));
+        return view('admin.broker.recored', compact('recored','name','role','total_advance','debit'));
     }
 }
