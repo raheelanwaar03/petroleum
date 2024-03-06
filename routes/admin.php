@@ -25,7 +25,7 @@ Route::get('/Edit/Vehicale/{id}', [VehicalesController::class, 'edit'])->name('E
 Route::post('/Update/Vehicale/{id}', [VehicalesController::class, 'update'])->name('Update.Vehicale');
 Route::get('/Delete/Vehicale/{id}', [VehicalesController::class, 'delete'])->name('Delete.Vehicale');
 // fuel record
-Route::get('/Fuel', [FuelRecoredController::class, 'index'])->name('All.Recored');
+Route::get('/Selling/Fuel', [FuelRecoredController::class, 'index'])->name('All.Recored');
 Route::post('/Store/Selling/Record', [FuelRecoredController::class, 'store_selling'])->name('Store.Recored');
 Route::get('/Edit/Selling/Record/{id}', [FuelRecoredController::class, 'edit'])->name('Edit.Recored');
 Route::post('/Update/Selling/Record/{id}', [FuelRecoredController::class, 'update'])->name('Update.Recored');
@@ -36,7 +36,7 @@ Route::post('/Add/User', [UserMangementController::class, 'add'])->name('Add.Use
 Route::get('/Edit/User/{id}', [UserMangementController::class, 'edit'])->name('Edit.User');
 Route::post('/Update/User/{id}', [UserMangementController::class, 'Update'])->name('Update.User');
 // buying recored
-Route::get('/Buying/Recored', [BuyingPetrolRecored::class, 'index'])->name('Buying.Record');
+Route::get('/Buying/Fuel', [BuyingPetrolRecored::class, 'index'])->name('Buying.Record');
 Route::post('/Store/Buying/Recored', [BuyingPetrolRecored::class, 'store'])->name('Store.Buying.Record');
 Route::get('/Edit/Buying/Recored/{id}', [BuyingPetrolRecored::class, 'edit'])->name('Edit.Buying.Record');
 Route::post('/Update/Buying/Recored/{id}', [BuyingPetrolRecored::class, 'update'])->name('Update.Buying.Record');

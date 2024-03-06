@@ -68,6 +68,7 @@ class BrokerController extends Controller
         } elseif ($check->role == 'Buyer') {
             $recored = BuyingPetrolRecored::where('seller', $name)->get();
         }
-        return view('admin.broker.recored', compact('recored', 'name'));
+        $role = $check->role;
+        return view('admin.broker.recored', compact('recored', 'name', 'role'));
     }
 }
