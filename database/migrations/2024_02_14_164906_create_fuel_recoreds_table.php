@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('date');
             $table->string('fuel');
             $table->string('status');
+            $table->string('advance')->nullable();
+            $table->string('remaning');
             $table->string('due_date');
             $table->string('method');
             $table->text('note')->nullable();

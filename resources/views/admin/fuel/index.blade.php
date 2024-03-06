@@ -14,6 +14,11 @@
     <link href="{{ asset('assets/public/assets/vendor/pickadate/themes/default.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/public/assets/vendor/pickadate/themes/default.date.css') }}" rel="stylesheet"
         type="text/css" />
+    <style>
+        .advanced-field {
+            display: none;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -38,6 +43,8 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Advance</th>
+                                            <th>Remaning</th>
                                             <th>Method</th>
                                             <th>Selling Date</th>
                                             <th>Due Date</th>
@@ -54,6 +61,8 @@
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->total_price }}</td>
                                                 <td>{{ $item->status }}</td>
+                                                <td>{{ $item->advance ?? 'None' }}</td>
+                                                <td>{{ $item->remaning }}</td>
                                                 <td>{{ $item->method }}</td>
                                                 <td>{{ $item->date }}</td>
                                                 <td>{{ $item->due_date }}</td>
@@ -76,6 +85,8 @@
                                             <th>Price</th>
                                             <th>Total</th>
                                             <th>Status</th>
+                                            <th>Advance</th>
+                                            <th>Remaning</th>
                                             <th>Method</th>
                                             <th>Selling Date</th>
                                             <th>Due Date</th>
@@ -123,10 +134,16 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <input type="text" name="status" placeholder="Enter Payment Status" id="status"
-                                        class="form-control">
+                                <div class="m-2">
+                                    <label for="">Status</label>
+                                    <select name="status" id="selectField">
+                                        <option value="Clear">Clear</option>
+                                        <option value="Advance">Advance</option>
+                                    </select>
+                                    <div id="advancedField" class="advanced-field">
+                                        <label for="advancedInput">Advanced Amount:</label>
+                                        <input type="text" id="advancedInput">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="method">Payment Method</label>
@@ -184,4 +201,16 @@
     <script src="{{ asset('assets/public/assets/js/plugins-init/jquery-asColorPicker.init.js') }}"></script>
     <script src="{{ asset('assets/public/assets/js/plugins-init/material-date-picker-init.js') }}"></script>
     <script src="{{ asset('assets/public/assets/js/plugins-init/pickadate-init.js') }}"></script>
+    <script>
+        document.getElementById('selectField').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var advancedField = document.getElementById('advancedField');
+
+            if (selectedValue === 'Advance') {
+                advancedField.style.display = 'block';
+            } else {
+                advancedField.style.display = 'none';
+            }
+        });
+    </script>
 @endsection

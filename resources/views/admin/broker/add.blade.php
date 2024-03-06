@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Add Expense</h4>
+                            <h4 class="card-title">Add Broker</h4>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('Store.Broker') }}" method="POST">

@@ -18,7 +18,14 @@ class BuyingPetrolRecored extends Controller
 
     public function store(Request $request)
     {
+        $advance =  $request->advance;
+
         $total_amount = $request->liter * $request->price;
+        if ($request->status == 'Advance') {
+            $remaning = $total_amount - $advance;
+        } else {
+            $remaning = 0;
+        }
 
         $record = new AdminBuyingPetrolRecored();
         $record->fuel = $request->fuel;
@@ -28,6 +35,8 @@ class BuyingPetrolRecored extends Controller
         $record->seller = $request->seller;
         $record->date = $request->date;
         $record->status = $request->status;
+        $record->remaning = $remaning;
+        $record->advance = $request->advance;
         $record->method = $request->method;
         $record->due_date = $request->due_date;
         $record->note = $request->note;
