@@ -53,6 +53,15 @@ class BuyingPetrolRecored extends Controller
 
     public function update(Request $request, $id)
     {
+        $total_amount = $request->liter * $request->price;
+        if ($request->status == 'Advance') {
+            $advance =  $request->advance;
+            $remaning = $total_amount - $advance;
+        } elseif ($request->status == 'Clear') {
+            $advance = 0;
+            $remaning = 0;
+        }
+
         $record = AdminBuyingPetrolRecored::find($id);
         $record->fuel = $request->fuel;
         $record->liter = $request->liter;
@@ -61,6 +70,8 @@ class BuyingPetrolRecored extends Controller
         $record->seller = $request->seller;
         $record->date = $request->date;
         $record->status = $request->status;
+        $record->advance = $request->advance;
+        $record->remaning = $remaning;
         $record->method = $request->method;
         $record->due_date = $request->due_date;
         $record->note = $request->note;

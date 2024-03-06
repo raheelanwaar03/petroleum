@@ -53,12 +53,23 @@ class FuelRecoredController extends Controller
 
     public function update(Request $request, $id)
     {
+        $total_amount = $request->liter * $request->price;
+        if ($request->status == 'Advance') {
+            $advance =  $request->advance;
+            $remaning = $total_amount - $advance;
+        } elseif ($request->status == 'Clear') {
+            $advance = 0;
+            $remaning = 0;
+        }
+
         $record = FuelRecored::find($id);
         $record->fuel = $request->fuel;
         $record->liter = $request->liter;
         $record->price = $request->price;
         $record->total_price = $request->price;
         $record->status = $request->status;
+        $record->advance = $request->advance;
+        $record->remaning = $remaning;
         $record->buyer = $request->buyer;
         $record->date = $request->date;
         $record->method = $request->method;

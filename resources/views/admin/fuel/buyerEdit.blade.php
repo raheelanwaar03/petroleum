@@ -1,5 +1,13 @@
 @extends('admin.layout.app')
 
+@section('links')
+    <style>
+        .advanced-field {
+            display: none;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="content-body">
         <div class="container-fluid">
@@ -40,9 +48,16 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <input type="text" class="form-control" value="{{ $fuel->status }}" name="status">
+                                <div class="m-2">
+                                    <label for="">Status</label>
+                                    <select name="status" id="selectField">
+                                        <option value="Clear">Clear</option>
+                                        <option value="Advance">Advance</option>
+                                    </select>
+                                    <div id="advancedField" class="advanced-field">
+                                        <label for="advancedInput">Advanced Amount:</label>
+                                        <input type="text" value="{{ $fuel->advanc }}" name="advance" id="advancedInput">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="method">Method</label>
@@ -67,4 +82,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        document.getElementById('selectField').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var advancedField = document.getElementById('advancedField');
+
+            if (selectedValue === 'Advance') {
+                advancedField.style.display = 'block';
+            } else {
+                advancedField.style.display = 'none';
+            }
+        });
+    </script>
 @endsection

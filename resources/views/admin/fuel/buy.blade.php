@@ -142,7 +142,7 @@
                                     </select>
                                     <div id="advancedField" class="advanced-field">
                                         <label for="advancedInput">Advanced Amount:</label>
-                                        <input type="text" id="advancedInput">
+                                        <input type="text" name="advance" id="advancedInput">
                                     </div>
                                 </div>
                                 <div class="form-group">
