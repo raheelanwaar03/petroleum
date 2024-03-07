@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('advance')->nullable();
             $table->string('remaning');
-            $table->string('due_date');
+            $table->string('due_date')->nullable();
             $table->string('method');
             $table->text('note')->nullable();
             $table->timestamps();

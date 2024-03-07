@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('advance')->nullable();
             $table->string('remaning');
             $table->string('method');
-            $table->string('due_date');
+            $table->string('due_date')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();
         });
